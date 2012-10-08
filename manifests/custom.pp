@@ -5,7 +5,7 @@ class postgresql::custom{
     content => template("postgresql/9.1/pg_hba.conf.erb"),
     owner   => 'postgres',
     group   => 'postgres',
-    replace => false,
+    replace => true,
     mode    => 640,
     require => [User['postgres'],Exec['init-postgres']]    ,
     notify  => Service['postgresql'],
