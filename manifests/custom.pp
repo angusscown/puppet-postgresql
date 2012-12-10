@@ -8,7 +8,6 @@ class postgresql::custom{
     replace => true,
     mode    => 640,
     require => [User['postgres'],Exec['init-postgres']]    ,
-    before => Exec['postgis template'],
     notify  => Service['postgresql'],
   }
 
